@@ -12,7 +12,7 @@ int player_lives = 3;
 int easySquares = 30;
 int mediumSquares = 60;
 int hardSquares = 120;
-unsigned int time = 0;
+unsigned int time = 50000;
 
 internal void
 simulate_player(float* p, float* dp, float ddp, float dt) {
@@ -210,7 +210,7 @@ simulate_game(Input* input, float dt) {
 				easySquares = 30;
 				mediumSquares = 60;
 				hardSquares = 120;
-				time = 0;
+				time = 50000;
 				current_gamemode = GM_MENU;
 
 			}
@@ -251,7 +251,7 @@ simulate_game(Input* input, float dt) {
 		}
 		else
 		{
-			time++;
+			time--;
 			draw_text("LIVES REMAINING:", 40, 42.5, .3f, 0xFFFFFF);
 			draw_number(player_lives, 70, 41.75, .45f, 0xFFFFFF);
 
@@ -335,7 +335,7 @@ simulate_game(Input* input, float dt) {
 			easySquares = 30;
 			mediumSquares = 60;
 			hardSquares = 120;
-			time = 0;
+			time = 50000;
 			current_gamemode = GM_MENU;
 		}
 	}
